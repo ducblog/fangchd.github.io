@@ -1,0 +1,132 @@
+---
+layout: post
+title: 在 Windows 上搭建本地 Jekll 环境
+categories: blog
+description: 在 Windows 上搭建本地 Jekll 环境。
+keywords: blog, github, Jekll
+---
+
+主要参考
+
+* [在 Windows 上安装 Jekyll](http://cn.yizeng.me/2013/05/10/setup-jekyll-on-windows/)
+* [windows 下安装 jekyll](http://jingyan.baidu.com/article/925f8cb8f6422ac0dde056ee.html)
+* [Windows下Jekyll配置过程详解](http://www.open-open.com/lib/view/open1414478737606.html)
+* [Setting up your GitHub Pages site locally with Jekyll - github](https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/)
+
+
+[Jekyll 使用过程中的一些常用的 RubyGems 命令](http://cn.yizeng.me/2013/05/17/quick-rubygems-command-references-for-jekyll/)
+
+
+## 故障诊断
+
+### 问题一
+C:\WINDOWS\system32>gem install jekyll
+ERROR:  While executing gem ... (Errno::EINVAL)
+    Invalid argument @ rb_file_s_stat - H:/
+
+**解决办法**：
+
+SET HOMEDRIVE=C:
+
+[Error running gem install on Windows 7 64 bit](http://stackoverflow.com/questions/4987300/error-running-gem-install-on-windows-7-64-bit)
+
+
+### 问题二
+C:\WINDOWS\system32>gem install jekyll
+ERROR:  Could not find a valid gem 'jekyll' (>= 0), here is why:
+          Unable to download data from https://rubygems.org/ - SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed (https://api.rubygems.org/specs.4.8.gz)
+
+**解决办法**：
+
+gem install jekyll -r --source http://rubygems.org/
+
+[gem 2.0.3 Unable to download data from https://rubygems.org/ - ... bad ecpoint](https://github.com/rubygems/rubygems/issues/515)
+
+### 问题三 
+C:\Users\dongf\MyStuff\git\fangchd.github.io>jekyll serve                                                     
+C:/Ruby23-x64/lib/ruby/2.3.0/rubygems/core_ext/kernel_require.rb:55:in `require': cannot load such file -- bun
+dler (LoadError)                                                                                              
+        from C:/Ruby23-x64/lib/ruby/2.3.0/rubygems/core_ext/kernel_require.rb:55:in `require'                 
+        from C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/jekyll-3.3.0/lib/jekyll/plugin_manager.rb:34:in `require_f
+rom_bundler'                                                                                                  
+        from C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/jekyll-3.3.0/exe/jekyll:9:in `<top (required)>'           
+        from C:/Ruby23-x64/bin/jekyll:23:in `load'                                                            
+        from C:/Ruby23-x64/bin/jekyll:23:in `<main>'  
+
+**解决办法**：
+
+gem install bundler -r --source http://rubygems.org/
+
+或者，从 rubygems.org 下载 [gem](https://rubygems.org/gems/bundler)，本地安装
+
+C:\Users\dongf\Downloads>gem install bundler-1.13.6.gem
+
+[cannot load such file — bundler/setup (LoadError)](http://stackoverflow.com/questions/19061774/cannot-load-such-file-bundler-setup-loaderror#answer-34575728)
+
+### 问题四
+C:\Users\dongf\MyStuff\git\fangchd.github.io>jekyll serve                                                                
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/bundler-1.13.6/lib/bundler/resolver.rb:366:in `block in verify_gemfile_           
+dependencies_are_found!': Could not find gem 'github-pages x64-mingw32' in any of the gem sources listed in yo           
+ur Gemfile or available on this machine. (Bundler::GemNotFound)                                                          
+        from C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/bundler-1.13.6/lib/bundler/resolver.rb:341:in `each'                 
+        from C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/bundler-1.13.6/lib/bundler/resolver.rb:341:in `verify_gemf           
+ile_dependencies_are_found!'                                     
+
+**解决办法**：
+
+同上
+gem install github-pages -r --source http://rubygems.org/
+gem install wdm -r --source http://rubygems.org/
+
+### 问题五
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/bundler-1.13.6/lib/bundler/runtime.rb:40:in `block in setup': You have already act
+ivated jekyll-sass-converter 1.4.0, but your Gemfile requires jekyll-sass-converter 1.3.0. Prepending `bundle exec` to yo
+ur command may solve this. (Gem::LoadError)  
+
+
+**解决办法**：
+C:\Users\dongf\MyStuff\git\fangchd.github.io>gem uninstall jekyll-sass-converter                                         
+                                                                                                                         
+Select gem to uninstall:                                                                                                 
+ 1. jekyll-sass-converter-1.3.0                                                                                          
+ 2. jekyll-sass-converter-1.4.0                                                                                          
+ 3. All versions                                                                                                         
+> 2     
+Successfully uninstalled jekyll-sass-converter-1.4.0                                                                     
+
+gem uninstall kramdown
+gem uninstall jekyll 
+
+[You have already activated X, but your Gemfile requires Y](http://stackoverflow.com/questions/6317980/you-have-already-activated-x-but-your-gemfile-requires-y)
+
+
+### 问题六
+C:\Users\dongf\MyStuff\git\fangchd.github.io>jekyll serve                                                                
+WARN: Unresolved specs during Gem::Specification.reset:                                                                  
+      listen (< 3.1, ~> 3.0)                                                                                             
+WARN: Clearing out unresolved specs.                                                                                     
+Please report a bug if this causes problems.                                                                             
+Configuration file: C:/Users/dongf/MyStuff/git/fangchd.github.io/_config.yml                                             
+            Source: C:/Users/dongf/MyStuff/git/fangchd.github.io                                                         
+       Destination: C:/Users/dongf/MyStuff/git/fangchd.github.io/_site                                                   
+ Incremental build: disabled. Enable with --incremental                                                                  
+      Generating...                                                                                                      
+  Liquid Exception: No repo name found. Specify using PAGES_REPO_NWO environment variables, 'repository' in your configur
+ation, or set up an 'origin' git remote pointing to your github.com repository. in /Users/dongf/MyStuff/git/fangchd.githu
+b.io/_layouts/default.html                                                                                               
+             ERROR: YOUR SITE COULD NOT BE BUILT:                                                                        
+                    ------------------------------------                                                                 
+                    No repo name found. Specify using PAGES_REPO_NWO environment variables, 'repository' in your configur
+ation, or set up an 'origin' git remote pointing to your github.com repository.      
+
+**解决办法**：
+
+C:\Users\dongf\MyStuff\git\fangchd.github.io\_config.yml
+添加
+repository: fangchd/fangchd.github.io
+
+[Cannot run Jekyll locally with "No repo name found".](https://github.com/jekyll/jekyll/issues/4705#issuecomment-200991736)
+
+
+
+

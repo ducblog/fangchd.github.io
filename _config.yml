@@ -3,6 +3,7 @@
 # ---------------- #
 baseurl:
 url: http://fangchd.github.io
+repository: fangchd/fangchd.github.io
 date_format: "ordinal"
 title: 方圜之地
 subtitle: "何方圜之能周兮"
