@@ -2,25 +2,25 @@
 #   Main Configs   #
 # ---------------- #
 baseurl:
-url: http://mazhuang.org
+url: http://fangchd.github.io
 date_format: "ordinal"
-title: 码志
-subtitle: "打码改变人生"
-description: "马壮的个人博客"
-keywords: 码志, Zhuang Ma, mzlogin, mazhuang
+title: 方圜之地
+subtitle: "何方圜之能周兮"
+description: "fangchd的个人博客"
+keywords: dva, fangchd, 方圆之地
 favicon: /favicon.ico
-timezone: Asia/Shanghai
+timezone: Asia/Shenzhen
 encoding: "utf-8"
 side_bar_repo_limit: 5
 
 # ---------------- #
 #      Author      #
 # ---------------- #
-author: Zhuang Ma
-organization: Sogou, Inc.
-organization_url: https://www.sogou.com
-location: Beijing, China
-email: chumpma@gmail.com
+author: fangchd
+organization: M, Inc.
+organization_url: https://www.m.com
+location: Shenzhen, China
+email: idfc@qq.com
 
 # ---------------- #
 #    Navigation    #
@@ -80,12 +80,12 @@ collections:
 # ---------------- #
 #      Socials     #
 # ---------------- #
-github_username: mzlogin
-douban_username: freedim
-facebook_username: mzlogin
-weibo_username: mzlogin
-zhihu_username: mzlogin
-twitter_username: mzlogin
+github_username: fangchd
+# douban_username: freedim
+# facebook_username: mzlogin
+# weibo_username: mzlogin
+# zhihu_username: mzlogin
+# twitter_username: mzlogin
 
 # ---------------- #
 #      Comments    #
@@ -108,6 +108,6 @@ google:
 # ---------------- #
 #      Datas       #
 # ---------------- #
-skill_software_keywords: [Java, C++, Python, Design Patterns]
+skill_software_keywords: [C#, C++, Python, Design Patterns]
 skill_mobile_app_keywords: [Android, Reverse Engineering]
-skill_windows_keywords: [Win32 SDK, DuiLib, WTL, COM, WinDbg]
+skill_windows_keywords: [Win32 SDK, WinDbg]
