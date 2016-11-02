@@ -10,8 +10,8 @@ keywords: blog, GoDaddy, DNSPod
 
 ## 操作流程
 
-1. 去 GoDaddy 官方网站 [www.godaddy.com](http://www.godaddy.com) 购买域名。
+1. 到 GoDaddy 官方网站 [www.godaddy.com](http://www.godaddy.com) 购买域名。
 
-2. 去 DNSPod 官方网站 [www.dnspod.cn/](https://www.dnspod.cn/) 注册，并按照官网说明一步一步进行配置。
+2. 在 DNSPod 官方网站 [www.dnspod.cn](https://www.dnspod.cn/) 注册，并按照官网说明一步一步进行配置。
 
 **官网说明**：[学会使用DNSPod，仅需三步](https://support.dnspod.cn/Kb/showarticle/tsid/177)。
