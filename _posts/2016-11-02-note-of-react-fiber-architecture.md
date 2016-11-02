@@ -43,7 +43,7 @@ The central idea of React's API is to think of updates as if they cause the enti
 
 > React 的核心概念：`component = function(data)`
 > 
-> 可以将每次更新视作它们会导致整个 app 重新 render。
+> 可以将每次更新视为让整个 app 重新 render。
 
 React has optimizations which create the appearance of whole app re-rendering while maintaining great performance. The bulk of these optimizations are part of a process called **reconciliation**.
 
@@ -60,7 +60,7 @@ Fiber reimplements the reconciler. It is not principally concerned with renderin
 
 > 在 React 中，reconciliation 和 rendering 是两个不同的阶段。
 > 
-> Fiber 重新实现了 reconciler。Fiber 和 rendering 基本上无关。   
+> React Fiber 重新实现了 reconciler。Fiber 和 rendering 基本上无关。   
 
 React's [Design Principles](https://facebook.github.io/react/contributing/design-principles.html#scheduling) document is so good on this subject that I'll just quote it here:
 
@@ -78,9 +78,9 @@ The key points are:
 - Different types of updates have different priorities — an animation update needs to complete more quickly than, say, an update from a data store.
 - A push-based approach requires the app (you, the programmer) to decide how to schedule work. A pull-based approach allows the framework (React) to be smart and make those decisions for you.
 
-> 目前，React 会在每一个 tick 时间间隔，遍历组件树，调用其 render 方法。然而，不是每次 UI 更新都需要立即生效。
+> 目前，React 会在每一个 tick 的时间间隔，遍历组件树，调用其 render 方法。然而，不是每次 UI 更新都需要立即生效。
 > 
-> React 将数据变化导致的 UI 更新，分为 reconciliation 和 rendering 两个过程。Fiber 的目标，就是让 reconciliation 的过程尽可能的对于用户无感知，避免连续大负荷的 reconciliation 导致 UI 界面失去响应。
+> React 把 UI 更新分为 reconciliation 和 rendering 两个过程。Fiber 的目标，就是让 reconciliation 的过程，尽可能的对于用户无感知。避免连续大负荷的 reconciliation 导致 UI 界面失去响应。
 > 
 > 与 iOS 系统类似，Fiber 通过提高 UI 动画的优先级，带来更佳的用户体验。
 > 
