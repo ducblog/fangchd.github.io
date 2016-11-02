@@ -6,7 +6,7 @@ description: 一步一步用 github 搭建 blog。
 keywords: blog, github
 ---
 
-主要参考阮一峰的文章，Fork 码志的 [mzlogin/mzlogin.github.io - GitHub](https://github.com/mzlogin/mzlogin.github.io)，并按其说明进行修改。
+Fork 码志的 [mzlogin/mzlogin.github.io - GitHub](https://github.com/mzlogin/mzlogin.github.io)，并按其说明进行修改。参考了：
 
 * [mzlogin/mzlogin.github.io - GitHub](https://github.com/mzlogin/mzlogin.github.io)
 * [github Pages和Jekyll入门 - 阮一峰](http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html)

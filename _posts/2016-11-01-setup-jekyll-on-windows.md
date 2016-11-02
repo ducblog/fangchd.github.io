@@ -6,7 +6,7 @@ description: 在 Windows 上搭建本地 Jekll 环境。
 keywords: blog, github, Jekll
 ---
 
-主要按照 [在 Windows 上安装 Jekyll](http://cn.yizeng.me/2013/05/10/setup-jekyll-on-windows/) 操作。  
+按照 [在 Windows 上安装 Jekyll](http://cn.yizeng.me/2013/05/10/setup-jekyll-on-windows/) 操作。  
 
 ## 参考链接
 

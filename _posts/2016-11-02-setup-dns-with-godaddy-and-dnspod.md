@@ -6,7 +6,7 @@ description: 记录为 fangchd.github.com 使用 GoDaddy 和 DNSPod 绑定域名
 keywords: blog, GoDaddy, DNSPod
 ---
 
-主要参考了 [Blog绑定域名——Godaddy + DNSPod](http://www.jianshu.com/p/252b542b1abf)。
+参考 [Blog绑定域名——Godaddy + DNSPod](http://www.jianshu.com/p/252b542b1abf)。
 
 ## 操作流程
 
