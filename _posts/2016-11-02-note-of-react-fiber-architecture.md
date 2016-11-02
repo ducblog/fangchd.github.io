@@ -6,7 +6,7 @@ description: React Fiber Architecture 摘录和笔记。
 keywords: react, fiber, reconciliation, note
 ---
 
-原文：https://github.com/acdlite/react-fiber-architecture
+原文：[https://github.com/acdlite/react-fiber-architecture](https://github.com/acdlite/react-fiber-architecture)
 
 ## Introduction  
 
