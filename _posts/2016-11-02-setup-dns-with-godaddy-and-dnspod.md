@@ -15,3 +15,7 @@ keywords: blog, GoDaddy, DNSPod
 2. 在 DNSPod 官方网站 [www.dnspod.cn](https://www.dnspod.cn/) 注册，并按照官网说明一步一步进行配置。
 
 **官网说明**：[学会使用DNSPod，仅需三步](https://support.dnspod.cn/Kb/showarticle/tsid/177)。
+
+## 更新
+
+DNSPod 未备案无法使用 CDN 加速，切换 NS 到[百度云加速](http://su.baidu.com/)。
