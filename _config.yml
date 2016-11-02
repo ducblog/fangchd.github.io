@@ -5,7 +5,7 @@ baseurl:
 url: http://fangchd.github.io
 repository: fangchd/fangchd.github.io
 date_format: "ordinal"
-title: 方寸山
+title: texjs
 subtitle: "何方圜之能周兮"
 description: "fangchd的个人博客"
 keywords: dva, fangchd, 方寸山
