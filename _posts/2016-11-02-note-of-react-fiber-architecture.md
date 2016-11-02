@@ -60,7 +60,7 @@ Fiber reimplements the reconciler. It is not principally concerned with renderin
 
 > 在 React 中，reconciliation 和 rendering 是两个不同的阶段。
 > 
-> React Fiber 重新实现了 reconciler。它和 rendering 基本上无关。   
+> React Fiber 重新实现了 reconciler。它和 rendering 基本无关。   
 
 React's [Design Principles](https://facebook.github.io/react/contributing/design-principles.html#scheduling) document is so good on this subject that I'll just quote it here:
 
@@ -167,7 +167,11 @@ That's all there is for now, but this document is nowhere near complete. Future 
 - how side-effects (such as lifecycle methods) work.
 - what a coroutine is and how it can be used to implement features like context and layout.
 
+## 一些想法
 
+- React Fiber 可能会导致性能测试的结果比原来差一些，但是用户体验却会比原来要好。
+- 目前，React 的每次 UI 更新都会很快执行。React Fiber 则可以 schedule 和 abort。
+- 很好奇，vue 是如何知道控件的依赖关系的。
 
 
 
