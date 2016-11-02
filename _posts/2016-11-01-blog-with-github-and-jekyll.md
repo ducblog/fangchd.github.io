@@ -14,7 +14,7 @@ keywords: blog, github
 
 ## TODO
 
-1. Mac 和 Windows 的本地预览。  [在 Windows 上搭建本地 Jekll 环境](http://127.0.0.1:4000/2016/11/01/setup-jekyll-on-windows/)
+1. Mac 和 Windows 的本地预览。  [在 Windows 上搭建本地 Jekll 环境](http://fangchd.github.io/2016/11/01/setup-jekyll-on-windows/)
 
 2. 配置 duoshuo 和 Disqus。
 
