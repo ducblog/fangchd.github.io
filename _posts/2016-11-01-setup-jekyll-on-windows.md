@@ -128,10 +128,14 @@ keywords: blog, github, Jekll
 
 **解决办法**：
 
-在系统环境变量中添加 JEKYLL_GITHUB_TOKEN 和 SSL_CERT_FILE。  
+在系统环境变量中添加 JEKYLL_GITHUB_TOKEN 和 SSL_CERT_FILE。 
+
+如果通过代理才能访问 GitHub，设置环境变量 HTTP_PROXY
+
+        SET HTTP_PROXY=http://domain%5Cusername:password@proxy:port
 
 **参考链接**：
 
 * [Fix the errors of GitHub Metadata and SSL certificate when running Jekyll serve](https://www.hieule.info/programming/fix-errors-github-metadata-ssl-certificate-running-jekyll-serve/)  
 * [GitHub Module Shows Out-of-Date Metadata](https://github.com/DONGChuan/Yummy-Jekyll/issues/6)  
-
+* [How do I update Ruby Gems from behind a Proxy (ISA-NTLM)](http://stackoverflow.com/questions/4418/how-do-i-update-ruby-gems-from-behind-a-proxy-isa-ntlm#answer-4431)

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 使用 github 搭建 blog
+title: 使用 GitHub 搭建 blog
 categories: blog
 description: 一步一步用 github 搭建 blog。
 keywords: blog, github
