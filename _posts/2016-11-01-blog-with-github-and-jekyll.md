@@ -6,7 +6,7 @@ description: 一步一步用 github 搭建 blog。
 keywords: blog, github
 ---
 
-主要参考阮一峰的文章，Fork 码志的修改过的 jekyll-theme-solid。
+主要参考阮一峰的文章，Fork 码志的 [mzlogin/mzlogin.github.io - GitHub](https://github.com/mzlogin/mzlogin.github.io)，并按其说明进行修改。
 
 * [mzlogin/mzlogin.github.io - GitHub](https://github.com/mzlogin/mzlogin.github.io)
 * [github Pages和Jekyll入门 - 阮一峰](http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html)
@@ -14,8 +14,10 @@ keywords: blog, github
 
 ## TODO
 
-1. Mac 和 Windows 的本地预览。
+1. Mac 和 Windows 的本地预览。  [在 Windows 上搭建本地 Jekll 环境](http://127.0.0.1:4000/2016/11/01/setup-jekyll-on-windows/)
 
 2. 配置 duoshuo 和 Disqus。
 
-3. 修改「关于」页面。
+3. 配置GoogleAnalytics。
+
+4. 修改「关于」页面。
