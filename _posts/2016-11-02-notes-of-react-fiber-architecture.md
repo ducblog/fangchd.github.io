@@ -172,7 +172,7 @@ That's all there is for now, but this document is nowhere near complete. Future 
 - React Fiber 借鉴了操作系统中 Process、Thread、Fiber 等相关概念。
 - React Fiber 可能会导致，在某些场景下性能测试的结果比原来差一些，但是用户体验却会比原来要好。
 - 目前，React 的每次 UI 更新都会很快执行。React Fiber 则可以 schedule 和 abort。这意味着有很多优化场景。
-- 很好奇，vue 是如何知道控件的依赖关系的，vue 号称不需要写 key 和 SCU 是怎么做到的。
+- vue 号称不需要写 key 和 shouldComponentUpdate。很好奇，vue 是如何知道控件的依赖关系的，它是怎么做到的。
 
 
 
