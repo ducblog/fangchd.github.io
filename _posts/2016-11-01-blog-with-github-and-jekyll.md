@@ -14,10 +14,10 @@ Fork 码志的 [mzlogin/mzlogin.github.io - GitHub](https://github.com/mzlogin/m
 
 ## TODO
 
-1. Mac 和 Windows 的本地预览。  [在 Windows 上搭建本地 Jekll 环境](http://fangchd.github.io/2016/11/01/setup-jekyll-on-windows/)
+- [x] Mac 和 Windows 的本地预览。  [在 Windows 上搭建本地 Jekll 环境](http://fangchd.github.io/2016/11/01/setup-jekyll-on-windows/)
 
-2. 配置 duoshuo 和 Disqus。
+- [x] 配置 duoshuo 和 Disqus。
 
-3. 配置GoogleAnalytics。
+- [x] 配置GoogleAnalytics。
 
-4. 修改「关于」页面。
+- [ ] 修改「关于」页面。
