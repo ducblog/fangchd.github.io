@@ -10,6 +10,14 @@ keywords: mac, MacOs, tip
 
 ## study study
 
-- [ ] 刻意练习：如何从新手到大师 - 安德斯艾利克森（Anders Ericsson）
+- [ ] 刻意练习：如何从新手到大师 - 安德斯艾利克森
+- [ ] The Cambridge Handbook of Expertise and Expert Performance - Anders Ericsson
+
+## todo list - Nov 2016
+
+暂时放在这里吧
+
+- [ ] UT / Jest
+
 
  
