@@ -99,7 +99,11 @@
 })(jQuery);
 
 $(document).ready(function(){
-  $('.post-directory').toc();
+  var postDirectory = $('.post-directory');
+  if (postDirectory.length === 0) {
+    return;
+  }
+  postDirectory.toc();
 
   var fixmeTop = $('#post-directory-module').offset().top;
   var tocSections = $('.clickable-header');

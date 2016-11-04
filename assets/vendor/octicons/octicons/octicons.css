@@ -25,6 +25,7 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  width: 16px;
 }
 .mega-octicon { font-size: 32px; }
 
