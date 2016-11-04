@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 在 Windows 上搭建本地 Jekll 环境
+title: 在 Windows 上搭建本地 Jekll 编译环境
 categories: blog
 description: 在 Windows 上搭建本地 Jekll 环境。
 keywords: blog, github, Jekll

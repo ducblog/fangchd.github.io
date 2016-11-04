@@ -10,6 +10,13 @@ keywords: todo
 
 ## todo list - Nov 2016
 
+### 美剧
+
+- [ ] 西部世界
+- [ ] 黑镜第三季
+
+### first
+
 - [ ] UT / Jest
 - [ ] Travis
 - [ ] 看一下 bootstrap。 [http://v3.bootcss.com/](http://v3.bootcss.com/)
@@ -23,14 +30,23 @@ keywords: todo
 
 ### jekyll
 
+#### 其他
+
 - [ ] jekyllcn [http://jekyllcn.com/](http://jekyllcn.com/)
 - [ ] jekyllrb [https://jekyllrb.com/docs/home/](https://jekyllrb.com/docs/home/)
 - [ ] 持续集成 [http://jekyllcn.com/docs/continuous-integration/](http://jekyllcn.com/docs/continuous-integration/)
 - [ ] Jekyll on Bitbucket [http://isti.bitbucket.org/2012/04/01/jekyll-on-bitbucket.html](http://isti.bitbucket.org/2012/04/01/jekyll-on-bitbucket.html)
 
+#### 性能优化
 
+- [ ] [13 STEPS TO A FASTER JEKYLL WEBSITE](https://wiredcraft.com/blog/make-jekyll-fast/)
+- [ ] [Profiling site rendering performance #1140](https://github.com/jekyll/jekyll/issues/1140)
+- [ ] [优化 Jekyll 博客访问慢的问题](http://9leg.com/other/2015/01/15/optimization-of-jekyll-blog-access-slow-problem.html)
 
+### 开发
 
+- [ ] vs code 下 MarkDown 的快捷跳转
+- [ ] 合并 Jekyll 的 css 和 js 文件
 
 
 

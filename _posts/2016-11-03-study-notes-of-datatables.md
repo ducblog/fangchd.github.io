@@ -1,6 +1,6 @@
 ---
 layout: post
-title: DataTables 笔记
+title: jQuery 表格插件 DataTables
 categories: javascript
 description: 记录学习 DataTables 的一些笔记。
 keywords: DataTables, jQuery, notes
@@ -14,7 +14,9 @@ DataTables 是一个基于 jQuery 的功能强大的 Table 解决方案。
 * [Datatables 中文网](http://datatables.club/)
 * [JQuery之DataTables强大的表格解决方案](http://www.cnblogs.com/jobs2/p/3431567.html)
 
-## 基本用法
+## 基本初始化
+
+### 基本用法
 
 	$('#example').DataTable();
 
@@ -26,9 +28,16 @@ DataTables 是一个基于 jQuery 的功能强大的 Table 解决方案。
         "info":     false
     } );
 
-## DOM positioning
+### DOM positioning
 
 Datatables 用一种奇怪的语法来控制它的不同部分的显示和位置。
+
+* l - Length，每页显示的记录数(PageSize)
+* f - Filter，过滤(Search)
+* t - Table，表格
+* i - Info，信息
+* p - Pagination，分页
+* r - pRocessing，正在处理中
 
     $('#example').DataTable( {
         "dom": '<lf<t>ip>'
@@ -46,9 +55,30 @@ Datatables 用一种奇怪的语法来控制它的不同部分的显示和位置
         { paging }
     </div>
 
+另外一个例子，
+
+    $('#example').DataTable( {
+        "dom": '<"top"i>rt<"bottom"flp><"clear">'
+    } );
+
+会生成下面的 DOM 结构：
+
+    <div class="top">
+        { info }
+    </div>
+    { processing }
+    { table }
+    <div class="bottom">
+        { filter }
+        { length }
+        { paging }
+    </div>
+
 详细说明请参考：[https://datatables.net/examples/basic_init/dom.html](https://datatables.net/examples/basic_init/dom.html)
 
-## DOM / jQuery 事件
+## 高级初始化
+
+### DOM / jQuery 事件
 
     $(document).ready(function() {
         var table = $('#example').DataTable();
@@ -59,7 +89,7 @@ Datatables 用一种奇怪的语法来控制它的不同部分的显示和位置
         } );
     } );
 
-## DataTables 事件
+### DataTables 事件
 
 详细事件列表请参考：[https://datatables.net/reference/event/](https://datatables.net/reference/event/)
 
@@ -73,7 +103,7 @@ Datatables 用一种奇怪的语法来控制它的不同部分的显示和位置
         $('#orderInfo').html( 'Ordering on column '+order[0][0]+' ('+order[0][1]+')' );
     } );
 
-## Column rendering
+### Column rendering
 
 下面的例子是将第4列的数据用括号括起来了，也显示在第一列的数据后面。
 
@@ -96,7 +126,7 @@ render 方法的详细参数请参考：[https://datatables.net/reference/option
         } );
     } );
 
-## Read HTML to data objects
+### Read HTML to data objects
 
 DataTables 可以把一个已经存在的原生的 table 的数据读到一个 javascript 对象里面。
 
@@ -108,5 +138,151 @@ DataTables 可以把一个已经存在的原生的 table 的数据读到一个 j
         "start_date": "...",
         "salary": "..."
     }
+
+### Row created callback
+
+如果第6列的数值大于 150000 则高亮。
+
+    $('#example').DataTable( {
+        "createdRow": function ( row, data, index ) {
+            if ( data[5].replace(/[\$,]/g, '') * 1 > 150000 ) {
+                $('td', row).eq(5).addClass('highlight');
+            }
+        }
+    } );
+
+### Row grouping
+
+在 drawCallback 事件中根据第三列的 location 数值插入 group 行。 
+
+    var table = $('#example').DataTable({
+        "columnDefs": [
+            { "visible": false, "targets": 2 }
+        ],
+        "order": [[ 2, 'asc' ]],
+        "displayLength": 25,
+        "drawCallback": function ( settings ) {
+            var api = this.api();
+            var rows = api.rows( {page:'current'} ).nodes();
+            var last=null;
+ 
+            api.column(2, {page:'current'} ).data().each( function ( group, i ) {
+                if ( last !== group ) {
+                    $(rows).eq( i ).before(
+                        '<tr class="group"><td colspan="5">'+group+'</td></tr>'
+                    );
+ 
+                    last = group;
+                }
+            } );
+        }
+    } );
+ 
+    // Order by the grouping
+    $('#example tbody').on( 'click', 'tr.group', function () {
+        var currentOrder = table.order()[0];
+        if ( currentOrder[0] === 2 && currentOrder[1] === 'asc' ) {
+            table.order( [ 2, 'desc' ] ).draw();
+        }
+        else {
+            table.order( [ 2, 'asc' ] ).draw();
+        }
+    } );
+
+
+### Footer callback
+
+Footer 可以自定义
+
+    $('#example').DataTable( {
+        "footerCallback": function ( row, data, start, end, display ) {
+            var api = this.api(), data;
+ 
+            // Remove the formatting to get integer data for summation
+            var intVal = function ( i ) {
+                return typeof i === 'string' ?
+                    i.replace(/[\$,]/g, '')*1 :
+                    typeof i === 'number' ?
+                        i : 0;
+            };
+ 
+            // Total over all pages
+            total = api
+                .column( 4 )
+                .data()
+                .reduce( function (a, b) {
+                    return intVal(a) + intVal(b);
+                }, 0 );
+ 
+            // Total over this page
+            pageTotal = api
+                .column( 4, { page: 'current'} )
+                .data()
+                .reduce( function (a, b) {
+                    return intVal(a) + intVal(b);
+                }, 0 );
+ 
+            // Update footer
+            $( api.column( 4 ).footer() ).html(
+                '$'+pageTotal +' ( $'+ total +' total)'
+            );
+        }
+    } );
+
+## 数据源、Ajax 和服务端处理
+
+### HTML (DOM) sourced data
+
+DataTables 可以直接从 DOM 直接读取 table 数据。
+
+### Ajax sourced data
+
+DataTables 可以通过 ajax 选项去读取不同类型的数据。
+
+    $('#example').DataTable( {
+        "ajax": '../ajax/data/arrays.txt'
+    } );
+
+更多例子请参考 [Ajax examples](https://datatables.net/examples/ajax/)。
+
+### Javascript sourced data
+
+也可以直接通过 data 选项设置数据。
+
+    $('#example').DataTable( {
+        data: dataSet,
+        columns: [
+            { title: "Name" },
+            { title: "Position" },
+            { title: "Office" },
+            { title: "Extn." },
+            { title: "Start date" },
+            { title: "Salary" }
+        ]
+    } );
+
+
+### Server-side processing
+
+ajax 选项也可以提交一些更复杂的参数到服务器端去请求数据。比如，
+
+    $('#example').DataTable( {
+        "processing": true,
+        "serverSide": true,
+        "ajax": {
+            "url": "scripts/server_processing.php",
+            "type": "POST",
+            "data": function ( d ) {
+                d.myKey = "myValue";
+                // d.custom = $('#myInput').val();
+                // etc
+            }
+        }
+    } );
+
+
+详见：[Server-side processing](https://datatables.net/examples/server_side/)
+
+## 插件
 
 
