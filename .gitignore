@@ -1,8 +1,11 @@
 _site/
 _bak/
+node_modules/
+npm-debug.log
 *.swp
 *.~vsd
 \#*\#
 *~
 .DS_Store
 Gemfile.lock
+yarn.lock

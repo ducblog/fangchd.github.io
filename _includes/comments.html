@@ -42,14 +42,17 @@
         <!-- 多说公共JS代码 BEGIN (一个网页只需插入一次) -->
         <script type="text/javascript">
         var duoshuoQuery = {short_name:"{{ site.duoshuo_username }}"};
-        $(function() {
+        function run() {
             $('.show_duoshuo_comment').on('click', function() {
                 $(this).html('加载中...');
                 var that = this;
                 var src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
                 $.getScript(src, function(){$(that).remove()});
             })
-        })
+        }
+        if (document.addEventListener) {
+            document.addEventListener('DOMContentLoaded', run);
+        }
         </script>
         <!-- 多说公共JS代码 END -->
         <!-- Duoshuo Comment END -->

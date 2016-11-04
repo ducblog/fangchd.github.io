@@ -1,0 +1,28 @@
+{
+  "name": "fangchd.github.io",
+  "version": "1.0.0",
+  "description": "blog",
+  "main": "index.js",
+  "scripts": {
+    "test": "no test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/fangchd/fangchd.github.io.git"
+  },
+  "keywords": [
+    "texjs"
+  ],
+  "author": "fangchd",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fangchd/fangchd.github.io/issues"
+  },
+  "homepage": "https://github.com/fangchd/fangchd.github.io#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.13",
+    "gulp-concat": "^2.6.0",
+    "gulp-minify": "0.0.14"
+  }
+}
