@@ -18,7 +18,7 @@
               this.page.identifier = '{{ page.url }}';
               this.page.title = '{{ page.title }}';
             };
-            (function() { // DON'T EDIT BELOW THIS LINE
+            var initDisqus = function() { // DON'T EDIT BELOW THIS LINE
               var d = document, s = d.createElement('script');
 
               s.type = 'text/javascript';
@@ -29,7 +29,12 @@
 
               s.setAttribute('data-timestamp', +new Date());
               (d.head || d.body).appendChild(s);
-            })();
+            };
+            if (document.addEventListener) {
+                document.addEventListener('DOMContentLoaded', function () {
+                    initDisqus();
+                });
+            }
           </script>
           <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
         {% endif %}
