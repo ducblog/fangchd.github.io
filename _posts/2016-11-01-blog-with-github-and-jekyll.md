@@ -14,10 +14,16 @@ Fork 码志的 [mzlogin/mzlogin.github.io - GitHub](https://github.com/mzlogin/m
 
 ## TODO
 
-- [x] Mac 和 Windows 的本地预览。  [在 Windows 上搭建本地 Jekll 环境](http://fangchd.github.io/2016/11/01/setup-jekyll-on-windows/)
+- [x] Mac 和 Windows 的本地预览。[在 Windows 上搭建本地 Jekyll 环境](http://fangchd.github.io/2016/11/01/setup-jekyll-on-windows/)
 
 - [x] 配置 duoshuo 和 Disqus。
 
 - [x] 配置GoogleAnalytics。
 
+- [x] Jekyll 性能优化。
+
 - [ ] 修改「关于」页面。
+
+- [ ] 转移到 Hexo？参考 [使用GitHub和Hexo搭建免费静态Blog](https://wsgzao.github.io/post/hexo-guide/)
+
+- [ ] 改为 https。
