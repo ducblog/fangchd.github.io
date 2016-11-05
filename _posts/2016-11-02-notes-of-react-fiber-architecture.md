@@ -1,7 +1,7 @@
 ---
 layout: post
 title: React Fiber Architecture 笔记
-categories: notes
+categories: javascript
 description: React Fiber Architecture 摘录和笔记。
 keywords: react, fiber, reconciliation, notes
 ---

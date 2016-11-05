@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Unix/Linux Command Reference
-categories: reference
+categories: mac
 description: Unix/Linux Command Reference
 keywords: linux, command, reference, cheatsheet
 ---

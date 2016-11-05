@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 我的书单
-categories: todo
+categories: life
 description: 想看或者在看或者看过的书。
 keywords: booklist
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 我的 todo list
-categories: book
+categories: life
 description: todo
 keywords: todo
 ---
