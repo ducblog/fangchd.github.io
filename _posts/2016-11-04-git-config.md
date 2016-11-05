@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Git 的配置和使用
-categories: develop
+categories: development
 description: My Git config.
 keywords: Git, config
 ---

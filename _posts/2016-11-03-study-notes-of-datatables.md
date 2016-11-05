@@ -1,7 +1,7 @@
 ---
 layout: post
 title: jQuery 表格插件 DataTables
-categories: javascript
+categories: development
 description: 记录学习 DataTables 的一些笔记。
 keywords: DataTables, jQuery, notes
 ---
