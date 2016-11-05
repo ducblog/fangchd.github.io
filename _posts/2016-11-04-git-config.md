@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Git 配置
+title: Git 的配置和使用
 categories: develop
 description: My Git config.
 keywords: Git, config
 ---
 
-更新中……
+Git 配置和一些参考链接。
 
 ## 我的 Git 配置
 
