@@ -6,7 +6,7 @@ description: 想看或者在看或者看过的书。
 keywords: booklist
 ---
 
-更新中……
+想看或者在看或者看过的书。
 
 ## study study
 
@@ -24,6 +24,7 @@ keywords: booklist
 - [ ] 异类 - 马尔科姆·格拉德威尔
 - [ ] 自私的基因 - 理查德·道金斯
 
+## 正在看的书
 
-
+- [ ] 必然 - 凯文·凯利
  

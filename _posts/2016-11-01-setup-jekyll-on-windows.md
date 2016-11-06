@@ -42,7 +42,13 @@ HOMEDRIVE 被设置到了 H 盘。
 
         gem install jekyll -r --source http://rubygems.org/
 
-或者修改根目录下面的 Gemfile 文件，将 `source 'https://rubygems.org'` 改为 `source 'http://rubygems.org'`
+或者，修改根目录下面的 Gemfile 文件，将
+
+        source 'https://rubygems.org'
+
+改为 
+
+        source 'http://rubygems.org'
 
 **参考链接**：[gem 2.0.3 Unable to download data from https://rubygems.org/ - ... bad ecpoint](https://github.com/rubygems/rubygems/issues/515)
 

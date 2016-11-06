@@ -19,7 +19,6 @@ keywords: todo
 
 - [ ] UT / Jest
 - [ ] Travis
-- [ ] 看一下 bootstrap。 [http://v3.bootcss.com/](http://v3.bootcss.com/)
 
 ### mzlogin
 
@@ -51,6 +50,7 @@ keywords: todo
     - [Understanding MobX vs Redux - youtube](https://www.youtube.com/watch?v=83v8cdvGfeA)
 - [ ] vs code 下 MarkDown 的快捷跳转
 - [ ] 合并 Jekyll 的 css 和 js 文件
+- [ ] 看一下 bootstrap。 [http://v3.bootcss.com/](http://v3.bootcss.com/)
 
 ### blog
 
