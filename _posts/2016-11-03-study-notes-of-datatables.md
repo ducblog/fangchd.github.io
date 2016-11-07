@@ -310,4 +310,12 @@ $('#example').DataTable( {
 
 ## 插件
 
+DataTables 给开发人员提供了一个插件的框架。
 
+### API plug-ins
+
+https://datatables.net/plug-ins/api/
+https://datatables.net/plug-ins/api/sum()
+https://datatables.net/reference/api/
+
+## 扩展
