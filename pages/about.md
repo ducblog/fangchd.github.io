@@ -2,7 +2,7 @@
 layout: page
 title: About
 description: Write Elegant Code with JavaScript
-keywords: TexJS, JavaScript
+keywords: DuxJS, JavaScript
 comments: true
 menu: 关于
 permalink: /about/
