@@ -250,6 +250,25 @@ $('#example').DataTable( {
 } );
 ```
 
+## API
+
+### Accessing the API
+
+有三种方式访问 api，
+
+- $( selector ).DataTable();
+- $( selector ).dataTable().api();
+- new $.fn.dataTable.Api( selector );
+
+注意 $( selector ).DataTable() 与 $( selector ).dataTable() 的区别。前者返回 api，后者返回 jQuery 对象。
+
+api 与 jQuery 对象可以相互转换。
+
+``` javascript
+api.to$()                           // api 转成 jQuery 对象
+$( selector ).dataTable().api()     // jQuery 对象 转成 api
+```
+
 ## 数据源、Ajax 和服务端处理
 
 ### HTML (DOM) sourced data
@@ -307,6 +326,8 @@ $('#example').DataTable( {
 ```
 
 详见：[Server-side processing](https://datatables.net/examples/server_side/)
+
+
 
 ## 插件
 
