@@ -340,3 +340,12 @@ DataTables 给开发人员提供了一个插件的框架。
 - https://datatables.net/reference/api/
 
 ## 扩展
+
+## Fixed Header
+
+参考链接：
+
+- [markmalek/Fixed-Header-Table - github.com](https://github.com/markmalek/Fixed-Header-Table/blob/master/jquery.fixedheadertable.js) 
+- [mustafaozcan/jquery.fixedtableheader - github.com](https://github.com/mustafaozcan/jquery.fixedtableheader/blob/master/src/jquery.fixedtableheader.js)
+- [jmosbech/StickyTableHeaders - github.com](https://github.com/jmosbech/StickyTableHeaders/blob/master/js/jquery.stickytableheaders.js)
+

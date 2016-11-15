@@ -45,13 +45,19 @@ keywords: todo
 
 ### 开发
 
-- [ ] mobx。
+- [ ] mobx
     - [Practical React with MobX - youtube](https://www.youtube.com/watch?v=XGwuM_u7UeQ)
     - [MobX tutorial #1 - MobX + React is AWESOME - youtube](https://www.youtube.com/watch?v=_q50BXqkAfI)
     - [Understanding MobX vs Redux - youtube](https://www.youtube.com/watch?v=83v8cdvGfeA)
 - [ ] vs code 下 MarkDown 的快捷跳转
 - [ ] 合并 Jekyll 的 css 和 js 文件
 - [ ] 看一下 bootstrap。 [http://v3.bootcss.com/](http://v3.bootcss.com/)
+- [ ] typescript
+    - [TypeScript Handbook（中文版）](https://www.gitbook.com/book/zhongsp/typescript-handbook/details)
+    - [https://github.com/zhongsp/TypeScript](https://github.com/zhongsp/TypeScript)
+    - [https://github.com/DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)
+    - [https://blog.appdynamics.com/devops/8-steps-migrating-javascript-typescript/](https://blog.appdynamics.com/devops/8-steps-migrating-javascript-typescript/)
+- [ ] [https://app.pluralsight.com/library/](https://app.pluralsight.com/library/)
 
 ### blog
 
