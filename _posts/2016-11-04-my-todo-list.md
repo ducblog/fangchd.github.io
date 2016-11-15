@@ -19,6 +19,7 @@ keywords: todo
 
 - [ ] UT / Jest
 - [ ] Travis
+- [ ] Plural Sight
 
 ### mzlogin
 

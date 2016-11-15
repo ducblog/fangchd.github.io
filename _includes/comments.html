@@ -48,7 +48,7 @@
         <script type="text/javascript">
         var duoshuoQuery = {short_name:"{{ site.duoshuo_username }}"};
         
-        function run() {
+        function showDuoshuoWhenClick() {
             $('.show_duoshuo_comment').on('click', function() {
                 $(this).html('加载中...');
                 var that = this;
@@ -57,7 +57,7 @@
             })
         }
         if (document.addEventListener) {
-            document.addEventListener('DOMContentLoaded', run);
+            document.addEventListener('DOMContentLoaded', showDuoshuoWhenClick);
         }
         </script>
         <!-- 多说公共JS代码 END -->
@@ -72,16 +72,28 @@
       <!-- 多说评论框 END -->
       <!-- 多说公共JS代码 BEGIN (一个网页只需插入一次) -->
       <script type="text/javascript">
+      function showComment (show) {
+        var shareDiv = document.getElementsByClassName('share');
+        var commentDiv = document.getElementsByClassName('comment');
+        shareDiv[0].style.display = show ? 'block' : "none";
+        commentDiv[0].style.display = show ? 'block' : "none";
+      };
       var duoshuoQuery = {short_name:"{{ site.duoshuo_username }}"};
-        (function() {
-          var ds = document.createElement('script');
-          ds.type = 'text/javascript';ds.async = true;
-          ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-          ds.charset = 'UTF-8';
-          (document.getElementsByTagName('head')[0]
-           || document.getElementsByTagName('body')[0]).appendChild(ds);
-        })();
-        </script>
+      var initDuoshuo = function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+          || document.getElementsByTagName('body')[0]).appendChild(ds);
+      };
+      initDuoshuo();      
+      if (document.addEventListener) {
+          document.addEventListener('DOMContentLoaded', function () {
+              setTimeout(function() { showComment(true) }, 1000);
+          });
+      }      
+      </script>
       <!-- 多说公共JS代码 END -->
       <!-- Duoshuo Comment END -->
       {% endif %}
