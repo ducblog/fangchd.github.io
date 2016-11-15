@@ -22,7 +22,7 @@ Fork 码志的 [mzlogin/mzlogin.github.io - GitHub](https://github.com/mzlogin/m
 
 - [x] Jekyll 性能优化。
 
-- [ ] 修改「关于」页面。
+- [x] 修改「关于」页面。
 
 - [ ] 转移到 Hexo？参考 [使用GitHub和Hexo搭建免费静态Blog](https://wsgzao.github.io/post/hexo-guide/)
 

@@ -8,7 +8,28 @@ keywords: frontend, cheatsheat
 
 ## jQuery
 
-- [jquery cheat sheet](https://oscarotero.com/jquery/)
+- [jQuery Quick API Reference](https://oscarotero.com/jquery/)
 
-- [jQuery 中文文档](http://udn.yyuap.com/doc/jquery-api/)
+- [jQuery API 中文文档](http://www.css88.com/jqapi-1.9/old.html)
+
+- [jQuery API 3.1.0 速查表](http://jquery.cuishifeng.cn/)
+
+
+## Web technology
+
+- [Web technology For developers - mozilla](https://developer.mozilla.org/en-US/docs/Web)
+
+- [https://plainjs.com/](https://plainjs.com/)
+
+## online javascript editor
+
+- [http://www.webpackbin.com/N1ddTmfWG](http://www.webpackbin.com/N1ddTmfWG)
+
+- []()
+
+## javascript tools
+
+- [lambda-view](https://github.com/Jianru-Lin/lambda-view) 复杂 JavaScript 源码阅读分析工具
+
+
 
