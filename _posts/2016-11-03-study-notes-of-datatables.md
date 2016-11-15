@@ -254,7 +254,7 @@ $('#example').DataTable( {
 
 ### Accessing the API
 
-有三种方式访问 api，
+有三种方式**访问 api**，
 
 - $( selector ).DataTable();
 - $( selector ).dataTable().api();
@@ -262,11 +262,17 @@ $('#example').DataTable( {
 
 注意 $( selector ).DataTable() 与 $( selector ).dataTable() 的区别。前者返回 api，后者返回 jQuery 对象。
 
-api 与 jQuery 对象可以相互转换。
+**api 与 jQuery 对象**可以相互转换。
 
 ``` javascript
 api.to$()                           // api 转成 jQuery 对象
 $( selector ).dataTable().api()     // jQuery 对象 转成 api
+```
+
+通过 **api 访问 Table Dom** 节点，
+
+``` javascript
+const $tableDomNode = $(api.table().node());
 ```
 
 ## 数据源、Ajax 和服务端处理
@@ -341,11 +347,29 @@ DataTables 给开发人员提供了一个插件的框架。
 
 ## 扩展
 
-## Fixed Header
+### FixedColumns
+
+FixedColumns 添加的事件以 .dt.DTFC 结尾。
+
+- [https://github.com/DataTables/FixedColumns/blob/master/js/dataTables.fixedColumns.js](https://github.com/DataTables/FixedColumns/blob/master/js/dataTables.fixedColumns.js)
+
+### Fixed Header
 
 参考链接：
 
 - [markmalek/Fixed-Header-Table - github.com](https://github.com/markmalek/Fixed-Header-Table/blob/master/jquery.fixedheadertable.js) 
 - [mustafaozcan/jquery.fixedtableheader - github.com](https://github.com/mustafaozcan/jquery.fixedtableheader/blob/master/src/jquery.fixedtableheader.js)
 - [jmosbech/StickyTableHeaders - github.com](https://github.com/jmosbech/StickyTableHeaders/blob/master/js/jquery.stickytableheaders.js)
+- [http://js.do/thxiso/118986](http://js.do/thxiso/118986) adjust scrollbar style
+
+### row grouping
+
+- [http://legacy.datatables.net/release-datatables/extras/FixedColumns/row_grouping_height.html](http://legacy.datatables.net/release-datatables/extras/FixedColumns/row_grouping_height.html)
+- [http://legacy.datatables.net/release-datatables/extras/FixedColumns/row_grouping.html](http://legacy.datatables.net/release-datatables/extras/FixedColumns/row_grouping.html)
+- [https://datatables.net/examples/advanced_init/row_grouping.html](https://datatables.net/examples/advanced_init/row_grouping.html)
+
+## 一些链接
+
+- [https://datatables.net/reference/option/](https://datatables.net/reference/option/)
+- [https://datatables.net/reference/api/](https://datatables.net/reference/api/)
 

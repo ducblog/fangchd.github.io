@@ -25,7 +25,11 @@ keywords: frontend, cheatsheat
 
 - [http://www.webpackbin.com/N1ddTmfWG](http://www.webpackbin.com/N1ddTmfWG)
 
-- []()
+- [http://jsbeautifier.org/](http://jsbeautifier.org/)
+
+- [https://babeljs.io/repl/](https://babeljs.io/repl/)
+
+- [http://js.do/code/117951](http://js.do/code/117951)
 
 ## javascript tools
 

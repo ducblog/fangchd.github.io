@@ -51,6 +51,10 @@ Git 配置和一些参考链接。
 
     git ls-remote --exit-code -h "https://github.com/reactjs/redux.git"
 
+**避免git每次提交都输入密码**
+
+	git config --global credential.helper store
+
 
 
 
