@@ -17,7 +17,7 @@ keywords: todo
 
 ### first
 
-- [ ] UT / Jest
+- [ ] UT / Jest !!!
 - [ ] Travis
 - [ ] Plural Sight
 
@@ -64,6 +64,36 @@ keywords: todo
 - [ ] 参考 HelloDog 的博客进行优化。性能，评论，UI。[https://wsgzao.github.io/](https://wsgzao.github.io/)
 - [ ] 改为 https。 
 
+
+### React
+
+- [Show React events in the timeline when ReactPerf is active](https://github.com/facebook/react/pull/7549)
+- [https://webpack.js.org/](https://webpack.js.org/)
+
+### Jest
+
+- [Jest 14.0: React Tree Snapshot Testing](https://facebook.github.io/jest/blog/2016/07/27/jest-14.html)
+- [Jest 15.0: New Defaults for Jest](https://facebook.github.io/jest/blog/2016/09/01/jest-15.html)
+- [Jest 16.0: Turbocharged CLI & Community Update](https://facebook.github.io/jest/blog/2016/10/03/jest-16.html)
+- [http://facebook.github.io/jest/docs/tutorial-react.html#snapshot-testing](http://facebook.github.io/jest/docs/tutorial-react.html#snapshot-testing)
+- [https://github.com/facebook/jest/tree/master/website](https://github.com/facebook/jest/tree/master/website) 用react 生成静态网站
+- [Testing JavaScript with Jest - Egghead.io](https://egghead.io/playlists/testing-javascript-with-jest-a36c4074)
+- [Migrating to Jest - medium.com](https://medium.com/@kentcdodds/migrating-to-jest-881f75366e7e#.3mtv0cejj)
+
+### webpack
+
+- [Intro to Webpack - medium.com](https://medium.com/@kimberleycook/intro-to-webpack-1d035a47028d#.bcc7f8a6x)
+
+### other
+
+- [How to Write an Open Source JavaScript Library - Egghead.io](https://egghead.io/courses/how-to-write-an-open-source-javascript-library)
+- [How to Contribute to an Open Source Project on GitHub - Egghead.io](https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github)
+- [Set Breakpoints for the Chrome Debugger - Egghead.io](https://egghead.io/lessons/tools-set-breakpoints-for-the-chrome-debugger)
+- [Function as Child Components - medium.com](https://medium.com/merrickchristensen/function-as-child-components-5f3920a9ace9#.jfr0l8d6x)
+- [https://howdns.works/](https://howdns.works/) COOL~
+- [https://github.com/cssinjs/jss](https://github.com/cssinjs/jss)
+- [http://brotzky.co/blog/a-beginners-step-by-step-guide-to-code-splitting-with-webpack-2-and-react-router/](http://brotzky.co/blog/a-beginners-step-by-step-guide-to-code-splitting-with-webpack-2-and-react-router/)
+- [https://abdulapopoola.com/category/software-development-2/debugging/](https://abdulapopoola.com/category/software-development-2/debugging/)
 
 
 
