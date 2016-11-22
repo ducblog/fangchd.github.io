@@ -373,3 +373,31 @@ FixedColumns 添加的事件以 .dt.DTFC 结尾。
 - [https://datatables.net/reference/option/](https://datatables.net/reference/option/)
 - [https://datatables.net/reference/api/](https://datatables.net/reference/api/)
 
+## 一些问题
+
+### 宽度无法精确设定
+
+设置 `scrollX: true` 后，宽度无法精确设定。
+
+阅读源码发现
+
+```javascript
+// When scrolling (X or Y) we want to set the width of the table as 
+// appropriate. However, when not scrolling leave the table width as it
+// is. This results in slightly different, but I think correct behaviour
+if ( scrollX && scrollXInner ) {
+    tmpTable.width( scrollXInner );
+}
+else if ( scrollX ) {
+    tmpTable.css( 'width', 'auto' );
+    tmpTable.removeAttr('width');
+```
+
+所以，可以通过设置 scrollXInner 解决这个问题。
+
+- [http://stackoverflow.com/questions/509711/why-does-overflowhidden-not-work-in-a-td](http://stackoverflow.com/questions/509711/why-does-overflowhidden-not-work-in-a-td)
+- [http://stackoverflow.com/questions/3379220/how-to-limit-a-table-cell-to-one-line-of-text-using-css](http://stackoverflow.com/questions/3379220/how-to-limit-a-table-cell-to-one-line-of-text-using-css)
+- [http://jsfiddle.net/e3Eqn/](http://jsfiddle.net/e3Eqn/)
+
+
+
