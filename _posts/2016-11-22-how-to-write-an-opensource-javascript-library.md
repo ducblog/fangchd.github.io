@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [note] 如何写一个开源 javascript library
+title: 如何写一个开源 javascript library 
 categories: development
 description:  笔记
 keywords: opensource, javascript, library 
