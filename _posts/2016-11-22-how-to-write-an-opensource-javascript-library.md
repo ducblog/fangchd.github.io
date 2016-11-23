@@ -64,6 +64,13 @@ git push -u origin pr/padLeft
 git push --no-verify
 ```
 
+```
+git rebase --continue
+git rebase --abort
+git rebase -i
+git push -f
+```
+
 ### chai / mocha
 
 ```
