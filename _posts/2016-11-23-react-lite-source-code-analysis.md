@@ -25,7 +25,7 @@ keywords: react, react-lite, frontend
 
 line 52:
 
-```
+```javascript
   it('should copy `displayName` onto the Constructor', function() {
     var TestComponent = React.createClass({
       render: function() {
@@ -40,10 +40,13 @@ line 52:
 
 TestComponent 怎么自动生成 displayName 的呢？
 
-打开 http://babeljs.io/repl
+打开
+
+    http://babeljs.io/repl
+
 输入
 
-```
+```javascript
     var TestComponent = React.createClass({
       render: function() {
         return <div />;
@@ -52,6 +55,18 @@ TestComponent 怎么自动生成 displayName 的呢？
 ```
 
 会发现 babel 编译 jsx 生成的代码，自动添加了 displayName: "TestComponent",
+
+```javascript
+"use strict";
+
+var TestComponent = React.createClass({
+  displayName: "TestComponent",
+
+  render: function render() {
+    return React.createElement("div", null);
+  }
+});
+```
 
 那 test 的代码应该也使用了 babel 编译。
 
@@ -68,7 +83,7 @@ line 7:
 
 line 20:
 
-```
+```javascript
   "jest": {
     "scriptPreprocessor": "<rootDir>/jest/preprocessor.js",
     "persistModuleRegistryBetweenSpecs": true,
@@ -82,7 +97,7 @@ line 20:
 
     C:\Users\dongf\MyStuff\git\react-lite-master\jest\preprocessor.js
 
-```
+```javascript
 var babelJest = require('babel-jest')
 var webpackAlias = require('jest-webpack-alias')
 ```
@@ -95,13 +110,13 @@ createClass() 生成的类继承了 Component
 
 line 90:
 
-```
+```javascript
 let proto = Klass.prototype = new Facade()
 ```
 
 line 61:
 
-```
+```javascript
 Facade.prototype = Component.prototype
 ```
 
@@ -111,7 +126,7 @@ Facade.prototype = Component.prototype
 
 line 15:
 
-```
+```javascript
 function combineMixinToProto(proto, mixin) {
 	for (let key in mixin) {
 	...
@@ -125,6 +140,8 @@ function combineMixinToProto(proto, mixin) {
 		} else {
 			proto[key] = value
 		}
+    }
+}
 ```
 
 class 的 propTypes，contextTypes，statics 会通过 _.extend() 合并。
@@ -133,7 +150,7 @@ getDefaultProps 会合并到 defaultProps 。
 
 line 34:
 
-```
+```javascript
 function combineMixinToClass(Component, mixin) {
 	...
 		_.extend(Component.propTypes, mixin.propTypes)
@@ -143,6 +160,7 @@ function combineMixinToClass(Component, mixin) {
 		_.extend(Component, mixin.statics)
 	...
 		_.extend(Component.defaultProps, mixin.getDefaultProps())
+}
 ```
 
 ### createElement
@@ -155,7 +173,7 @@ React 有四种类型的 element，
 
 line 10:
 
-```
+```javascript
 export default function createElement(type, props, children) {
 	let vtype = null
 	if (typeof type === 'string') {
@@ -166,6 +184,8 @@ export default function createElement(type, props, children) {
 		} else {
 			vtype = VSTATELESS
 		}
+    }
+}
 ```
 
 createElement() 会将 key 和 ref 从 props 里面单独抽出来。
@@ -173,7 +193,7 @@ createElement() 会将 key 和 ref 从 props 里面单独抽出来。
 
 line 24:
 
-```
+```javascript
 	let key = null
 	let ref = null
 	let finalProps = {}
@@ -204,11 +224,24 @@ line 24:
 
 line 87:
 
-```
+```javascript
 export function render(vnode, container, callback) {
 	return renderTreeIntoContainer(vnode, container, callback)
 }
 ```
 
+再找到 renderTreeIntoContainer()
 
+line 21:
+
+```javascript
+let pendingRendering = {}
+let vnodeStore = {}
+function renderTreeIntoContainer(vnode, container, callback, parentContext) {
+
+
+
+}
+
+```
 
