@@ -6,11 +6,12 @@ description:  笔记
 keywords: opensource, javascript, library 
 ---
 
+- [Contributing to Open Source on GitHub - github.com](https://guides.github.com/activities/contributing-to-open-source/)
 - [Introducing: How to Contribute to Open Source - medium](https://medium.com/@kentcdodds/introducing-how-to-contribute-to-open-source-be67917eb704#.yt5exq9tf)
 - [Introduction to How to Write an Open Source JavaScript Library - egghead](https://egghead.io/lessons/javascript-how-to-write-a-javascript-library-introduction)
 - [How to Contribute to an Open Source Project on GitHub - egghead](https://egghead.io/lessons/javascript-introduction-to-github)
 - [https://github.com/kentcdodds/starwars-names/](https://github.com/kentcdodds/starwars-names/)
-
+- [https://github.com/eggheadio-github/stack-overflow-copy-paste](https://github.com/eggheadio-github/stack-overflow-copy-paste)
 
 ### npm
 
