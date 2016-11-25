@@ -163,12 +163,12 @@ function combineMixinToClass(Component, mixin) {
 }
 ```
 
-### createElement
+## createElement
 
     C:\Users\dongf\MyStuff\git\react-lite-master\src\createElement.js
 
 先通过 type 得到 vtype
-React 有四种类型的 element，
+React 有四种类型的 element ，
     VELEMENT, VSTATELESS, VCOMPONENT, VCOMMENT
 
 line 10:
@@ -230,7 +230,7 @@ export function render(vnode, container, callback) {
 }
 ```
 
-再找到 renderTreeIntoContainer()
+再找到 renderTreeIntoContainer() 。貌似一个 container 只能 render 一个 react element 。
 
 line 21:
 
@@ -238,10 +238,154 @@ line 21:
 let pendingRendering = {}
 let vnodeStore = {}
 function renderTreeIntoContainer(vnode, container, callback, parentContext) {
-
-
-
+    ...
+	pendingRendering[id] = true
+	let oldVnode = null
+	let rootNode = null
+	if (oldVnode = vnodeStore[id]) {
+		rootNode = compareTwoVnodes(oldVnode, vnode, container.firstChild, parentContext)
+	} else {
+		rootNode = initVnode(vnode, parentContext, container.namespaceURI)
+		var childNode = null
+		while (childNode = container.lastChild) {
+			container.removeChild(childNode)
+		}
+		container.appendChild(rootNode)
+	}
+    ...
 }
+```
 
+initVnode() 方法定义在
+
+    C:\Users\dongf\MyStuff\git\react-lite-master\src\virtual-dom.js
+
+line 32:
+
+```javascript
+export function initVnode(vnode, parentContext, namespaceURI) {
+    let { vtype } = vnode
+    let node = null
+    if (!vtype) { // init text
+        node = document.createTextNode(vnode)
+    } else if (vtype === VELEMENT) { // init element
+        node = initVelem(vnode, parentContext, namespaceURI)
+    } else if (vtype === VCOMPONENT) { // init stateful component
+        node = initVcomponent(vnode, parentContext, namespaceURI)
+    } else if (vtype === VSTATELESS) { // init stateless component
+        node = initVstateless(vnode, parentContext, namespaceURI)
+    } else if (vtype === VCOMMENT) { // init comment
+        node = document.createComment(`react-text: ${ vnode.uid || _.getUid() }`)
+    }
+    return node
+}
+```
+
+先看 initVcomponent()，会先根据 contextTypes 获取 componentContext 。
+然后调用 Component 的构造函数。
+
+line 399:
+
+```javascript
+function initVcomponent(vcomponent, parentContext, namespaceURI) {
+    let { type: Component, props, uid } = vcomponent
+    let componentContext = getContextByTypes(parentContext, Component.contextTypes)
+    let component = new Component(props, componentContext)
+    ...
+}
+```
+
+ `let component = new Component(props, componentContext)` 会调用
+
+    C:\Users\dongf\MyStuff\git\react-lite-master\src\createClass.js
+
+```javascript
+export default function createClass(spec) {
+    ...
+	function Klass(props, context) {
+		Component.call(this, props, context)
+		this.constructor = Klass
+		spec.autobind !== false && bindContext(this, Klass.prototype)
+		this.state = this.getInitialState() || this.state
+	}
+    ...
+}
+```
+
+此时，会执行 `getInitialState()` 获取初始 state。并会自动为 creaeClass 里面定义的函数绑定 this。
+
+回到
+
+    C:\Users\dongf\MyStuff\git\react-lite-master\src\virtual-dom.js
+
+的 initVcomponent()。
+
+接下来会调用 componentWillMount()。然后通过 `updater.getState()` 获取更新后的 state 。
+
+```javascript
+function initVcomponent(vcomponent, parentContext, namespaceURI) {
+    ...
+    if (component.componentWillMount) {
+        component.componentWillMount()
+        component.state = updater.getState()
+    }
+    let vnode = renderComponent(component)
+    let node = initVnode(vnode, getChildContext(component, parentContext), namespaceURI)
+    node.cache = node.cache || {}
+    node.cache[uid] = component
+    cache.vnode = vnode
+    cache.node = node
+    cache.isMounted = true
+    _.addItem(pendingComponents, component)
+
+    if (vcomponent.refs && vcomponent.ref != null) {
+        _.addItem(pendingRefs, vcomponent)
+        _.addItem(pendingRefs, component)
+    }
+
+    return node
+}
+```
+
+因为，componentWillMount() 里面可以通过 this.setState() 来更新 state ，先回去看一下 setSate() 方法的实现。
+
+    C:\Users\dongf\MyStuff\git\react-lite-master\src\Component.js
+
+line 128:
+
+```javascript
+Component.prototype = {
+    ...
+	setState(nextState, callback) {
+		let { $updater } = this
+		$updater.addCallback(callback)
+		$updater.addState(nextState)
+	},
+}
+```
+
+调用了 $updater.addState(nextState)，
+
+line 46:
+
+```javascript
+Updater.prototype = {
+	emitUpdate(nextProps, nextContext) {
+		this.nextProps = nextProps
+		this.nextContext = nextContext
+		// receive nextProps!! should update immediately
+		nextProps || !updateQueue.isPending
+		? this.updateComponent()
+		: updateQueue.add(this)
+	},
+    ...
+	addState(nextState) {
+		if (nextState) {
+			_.addItem(this.pendingStates, nextState)
+			if (!this.isPending) {
+				this.emitUpdate()
+			}
+		}
+	},
 ```
 
