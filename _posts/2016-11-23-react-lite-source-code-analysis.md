@@ -19,9 +19,12 @@ keywords: react, react-lite, frontend
 
 ## displayName 和 jsx
 
-对照 C:\Users\dongf\MyStuff\git\react-lite-master\__tests__\ReactClass-test.js
+对照
+    
+    C:\Users\dongf\MyStuff\git\react-lite-master\__tests__\ReactClass-test.js
 
 line 52:
+
 ```
   it('should copy `displayName` onto the Constructor', function() {
     var TestComponent = React.createClass({
@@ -39,6 +42,7 @@ TestComponent 怎么自动生成 displayName 的呢？
 
 打开 http://babeljs.io/repl
 输入
+
 ```
     var TestComponent = React.createClass({
       render: function() {
@@ -56,12 +60,14 @@ test 入口
     C:\Users\dongf\MyStuff\git\react-lite-master\package.json
 
 line 7:
+
 ```
   "scripts": {
     "test": "jest",
 ```
 
 line 20:
+
 ```
   "jest": {
     "scriptPreprocessor": "<rootDir>/jest/preprocessor.js",
@@ -88,11 +94,13 @@ createClass() 生成的类继承了 Component
     C:\Users\dongf\MyStuff\git\react-lite-master\src\createClass.js
 
 line 90:
+
 ```
 let proto = Klass.prototype = new Facade()
 ```
 
 line 61:
+
 ```
 Facade.prototype = Component.prototype
 ```
@@ -102,6 +110,7 @@ Facade.prototype = Component.prototype
 否则，后面覆盖前面。
 
 line 15:
+
 ```
 function combineMixinToProto(proto, mixin) {
 	for (let key in mixin) {
@@ -123,6 +132,7 @@ getDefaultProps 会合并到 defaultProps 。
 也就是说，getDefaultProps() 是最先执行的。在 createClass() 的时候就会执行。
 
 line 34:
+
 ```
 function combineMixinToClass(Component, mixin) {
 	...
@@ -144,6 +154,7 @@ React 有四种类型的 element，
     VELEMENT, VSTATELESS, VCOMPONENT, VCOMMENT
 
 line 10:
+
 ```
 export default function createElement(type, props, children) {
 	let vtype = null
@@ -161,6 +172,7 @@ createElement() 会将 key 和 ref 从 props 里面单独抽出来。
 把 children 和 type 的 defaultProps 还有 其他属性都放到 finalProps 上面去。
 
 line 24:
+
 ```
 	let key = null
 	let ref = null
@@ -188,4 +200,13 @@ line 24:
 
 ## React.render()
 
+    C:\Users\dongf\MyStuff\git\react-lite-master\src\ReactDOM.js
+
+line 87:
+
+```
+export function render(vnode, container, callback) {
+	return renderTreeIntoContainer(vnode, container, callback)
+}
+```
 
