@@ -55,7 +55,7 @@ Git 配置和一些参考链接。
 
 	git config --global credential.helper store
 
-**一个alias**
+**懒人必备alias**
 
 	[alias]
 		d = "!git add . \
